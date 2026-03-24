@@ -54,7 +54,7 @@ data:extend({
 		pick_sound = item_sounds.mechanical_inventory_pickup,
 		drop_sound = item_sounds.mechanical_inventory_move,
 		--default_import_location = "hydraulic_machines",
-		weight = 40 * kg,
+		weight = 50 * kg,
 		place_result = "hydraulic-assembling-machine",
 		stack_size = 50,
 	},
