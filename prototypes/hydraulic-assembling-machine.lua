@@ -42,6 +42,12 @@ function hydraulicassemblingmachinepipes()
 end
 
 data:extend({
+	{
+		name = "hydraulic-assembling",
+		type = "recipe-category",
+	},
+})
+data:extend({
 
 	{
 		type = "item",

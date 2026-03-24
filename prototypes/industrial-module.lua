@@ -20,7 +20,7 @@ data:extend({
 		weight = 20 * kg,
 		effect = {
 			productivity = 0.08,
-			consumption = 0.8,
+			consumption = 0.4,
 			pollution = 0.1,
 		},
 	},
@@ -40,7 +40,7 @@ data:extend({
 		weight = 20 * kg,
 		effect = {
 			productivity = 0.12,
-			consumption = 1.2,
+			consumption = 0.6,
 			pollution = 0.14,
 		},
 	},
@@ -60,8 +60,52 @@ data:extend({
 		weight = 20 * kg,
 		effect = {
 			productivity = 0.2,
-			consumption = 2.0,
+			consumption = 1.0,
 			pollution = 0.2,
 		},
+	},
+})
+
+data:extend({
+	{
+		type = "recipe",
+		name = "industrial-module",
+		category = "hydraulic-assembling",
+		enabled = false,
+		ingredients = {
+			{ type = "item", name = "productivity-module", amount = 4 },
+			{ type = "item", name = "advanced-circuit", amount = 5 },
+			{ type = "item", name = "electronic-circuit", amount = 5 },
+		},
+		energy_required = 20,
+		results = { { type = "item", name = "industrial-module", amount = 1 } },
+	},
+	{
+		type = "recipe",
+		name = "industrial-module-2",
+		category = "hydraulic-assembling",
+		enabled = false,
+		ingredients = {
+			{ type = "item", name = "industrial-module", amount = 4 },
+			{ type = "item", name = "productivity-module-2", amount = 4 },
+			{ type = "item", name = "advanced-circuit", amount = 5 },
+			{ type = "item", name = "processing-unit", amount = 5 },
+		},
+		energy_required = 40,
+		results = { { type = "item", name = "industrial-module-2", amount = 1 } },
+	},
+	{
+		type = "recipe",
+		name = "industrial-module-3",
+		category = "hydraulic-assembling",
+		enabled = false,
+		ingredients = {
+			{ type = "item", name = "industrial-module-2", amount = 4 },
+			{ type = "item", name = "productivity-module-3", amount = 4 },
+			{ type = "item", name = "advanced-circuit", amount = 5 },
+			{ type = "item", name = "processing-unit", amount = 5 },
+		},
+		energy_required = 80,
+		results = { { type = "item", name = "industrial-module-3", amount = 1 } },
 	},
 })

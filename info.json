@@ -5,7 +5,8 @@
     "author": "Talandar",
     "dependencies": [
         "diesel_engine",
-        "lubrication_tower"
+        "lubrication_tower",
+        "? diesel_machines"
     ],
     "description": "Set of powerful lube powered machines",
     "factorio_version": "2.0"
