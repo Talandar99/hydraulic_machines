@@ -1,12 +1,13 @@
 {
     "name": "hydraulic_machines",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "title": "Hydraulic Machines",
     "author": "Talandar",
     "dependencies": [
         "diesel_engine",
         "lubrication_tower",
         "? diesel_machines",
+        "? advanced_oil_rig",
         "? pelagos",
         "? planetaris-arig",
         "? lignumis",

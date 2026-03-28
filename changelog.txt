@@ -1,9 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 2026-03-28
+  Balancing:
+    - sligtly reduced crafting time of industrial modules to match other modules crafting time
+    - industrial modules crafting can be now affected by productivity bonus
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2026-03-28
+  Changes:
+    - advanced oil rig compatibility: advanced oil rig can use industrial modules 
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2026-03-28
   Changes:
-    - pelagos compatibility: calciner use industrial modules 
-    - burner foundry compatibility: foundry use industrial modules 
+    - pelagos compatibility: calciner can use industrial modules 
+    - burner foundry compatibility: foundry can use industrial modules 
     - lignumis compatibility: burner lumber mill can use industrial modules (can be toggled in settings)
     - arig compatibility: steam powered press can use industrial modules (can be toggled in settings)
 ---------------------------------------------------------------------------------------------------
