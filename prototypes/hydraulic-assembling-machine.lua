@@ -175,7 +175,8 @@ data:extend({
 		energy_source = {
 			type = "fluid",
 			burns_fluid = true, -- fluid used as power
-			emissions_per_minute = { pollution = 1 },
+			emissions_per_minute = { pollution = 2 },
+			scale_fluid_usage = true,
 			light_flicker = {
 				color = { 0, 0, 0, 0 }, -- to remove default burner glow
 			},

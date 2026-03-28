@@ -1,9 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 2026-03-28
+  Bugfixes:
+    - hydraulic machines will now consume more fluid if they need more power
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 2026-03-28
   Balancing:
     - sligtly reduced crafting time of industrial modules to match other modules crafting time
-    - industrial modules crafting can be now affected by productivity bonus
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 2026-03-28

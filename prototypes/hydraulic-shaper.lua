@@ -110,6 +110,7 @@ data:extend({
 				pipe_covers = pipecoverspictures(),
 				always_draw_covers = true,
 				volume = 10,
+				scale_fluid_usage = true,
 				filter = "lubricant",
 				pipe_connections = {
 					{ direction = defines.direction.west, position = { 0, 0 } },
