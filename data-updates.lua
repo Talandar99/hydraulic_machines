@@ -1,6 +1,5 @@
 -- machines
 require("prototypes/hydraulic-assembling-machine")
-require("industrial-module-list")
 -- require("prototypes/hydraulic-shaper")
 
 local machine = data.raw["assembling-machine"]["hydraulic-assembling-machine"]

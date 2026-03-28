@@ -5,3 +5,4 @@ require("prototypes/hydraulic-shaper")
 -- other
 require("prototypes/recipes")
 require("prototypes/technologies")
+require("industrial-module-list")
