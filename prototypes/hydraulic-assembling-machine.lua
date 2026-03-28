@@ -194,7 +194,7 @@ data:extend({
 		},
 		energy_usage = "100kW",
 		module_slots = 5,
-		allowed_effects = { "consumption", "speed", "productivity", "pollution" },
+		allowed_effects = { "consumption", "speed", "productivity", "pollution", "quality" },
 		allowed_module_categories = { "industrial", "speed", "productivity" },
 	},
 })

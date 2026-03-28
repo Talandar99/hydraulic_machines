@@ -1,5 +1,6 @@
 -- machines
 require("prototypes/hydraulic-assembling-machine")
+require("industrial-module-list")
 -- require("prototypes/hydraulic-shaper")
 
 local machine = data.raw["assembling-machine"]["hydraulic-assembling-machine"]
@@ -7,10 +8,3 @@ local base_categories = data.raw["assembling-machine"]["assembling-machine-3"].c
 local hydraulic_categories = table.deepcopy(base_categories)
 table.insert(hydraulic_categories, "hydraulic-assembling")
 machine.crafting_categories = hydraulic_categories
-
-if mods["diesel_machines"] then
-	data.raw["assembling-machine"]["diesel-assembling-machine"].allowed_module_categories =
-		{ "industrial", "speed", "productivity" }
-	data.raw["mining-drill"]["diesel-mining-drill"].allowed_module_categories =
-		{ "industrial", "speed", "productivity" }
-end
