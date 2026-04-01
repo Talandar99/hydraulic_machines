@@ -102,6 +102,7 @@ data:extend({
 			type = "fluid",
 			burns_fluid = true, -- fluid used as power
 			emissions_per_minute = { pollution = 1 },
+			scale_fluid_usage = true,
 			light_flicker = {
 				color = { 0, 0, 0, 0 }, -- to remove default burner glow
 			},
@@ -110,7 +111,6 @@ data:extend({
 				pipe_covers = pipecoverspictures(),
 				always_draw_covers = true,
 				volume = 10,
-				scale_fluid_usage = true,
 				filter = "lubricant",
 				pipe_connections = {
 					{ direction = defines.direction.west, position = { 0, 0 } },
@@ -128,6 +128,7 @@ data:extend({
 		open_sound = sounds.metallic_chest_open,
 		close_sound = sounds.metallic_chest_close,
 		animation_sound = sounds.logistics_chest_open,
+		--vector_to_place_result = { -0.0, -1.0 },
 		match_animation_speed_to_activity = true,
 		opened_duration = 7, --logistic_chest_opened_duration ==7
 		working_sound = {

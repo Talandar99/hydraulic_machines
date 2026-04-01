@@ -1,6 +1,5 @@
 -- machines
 require("prototypes/hydraulic-assembling-machine")
--- require("prototypes/hydraulic-shaper")
 
 local machine = data.raw["assembling-machine"]["hydraulic-assembling-machine"]
 local base_categories = data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories
