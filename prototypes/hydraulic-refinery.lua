@@ -107,7 +107,7 @@ data:extend({
 				color = { 0, 0, 0, 0 }, -- to remove default burner glow
 			},
 			fluid_box = {
-				pipe_picture = hydraulicassemblingmachinepipes(),
+				--pipe_picture = hydraulicassemblingmachinepipes(),
 				pipe_covers = pipecoverspictures(),
 				always_draw_covers = true,
 				volume = 10,
