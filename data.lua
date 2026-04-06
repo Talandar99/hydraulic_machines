@@ -2,6 +2,7 @@
 require("prototypes/industrial-module")
 require("prototypes/hydraulic-assembling-machine")
 require("prototypes/hydraulic-shaper")
+require("prototypes/hydraulic-refinery")
 require("hydraulic-shaping")
 require("industrial-module-list")
 -- other
