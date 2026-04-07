@@ -6,6 +6,7 @@
     "dependencies": [
         "diesel_engine",
         "lubrication_tower",
+        "(?) quality",
         "? diesel_machines",
         "? advanced_oil_rig",
         "? pelagos",

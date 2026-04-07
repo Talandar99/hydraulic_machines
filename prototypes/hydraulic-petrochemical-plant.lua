@@ -4,43 +4,6 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 
-function hydraulicassemblingmachinepipes()
-	return {
-		north = {
-			filename = "__hydraulic_machines__/graphics/hydraulic-assembling-machine/assembling-machine-3-pipe-N.png",
-			priority = "extra-high",
-			width = 71,
-			height = 38,
-			shift = util.by_pixel(2.25, 13.5),
-			scale = 0.5,
-		},
-		east = {
-			filename = "__hydraulic_machines__/graphics/hydraulic-assembling-machine/assembling-machine-3-pipe-E.png",
-			priority = "extra-high",
-			width = 42,
-			height = 76,
-			shift = util.by_pixel(-24.5, 1),
-			scale = 0.5,
-		},
-		south = {
-			filename = "__hydraulic_machines__/graphics/hydraulic-assembling-machine/assembling-machine-3-pipe-S.png",
-			priority = "extra-high",
-			width = 88,
-			height = 61,
-			shift = util.by_pixel(0, -31.25),
-			scale = 0.5,
-		},
-		west = {
-			filename = "__hydraulic_machines__/graphics/hydraulic-assembling-machine/assembling-machine-3-pipe-W.png",
-			priority = "extra-high",
-			width = 39,
-			height = 73,
-			shift = util.by_pixel(25.75, 1.25),
-			scale = 0.5,
-		},
-	}
-end
-
 data:extend({
 	{
 		name = "industrial-oil-processing",
@@ -51,8 +14,8 @@ data:extend({
 
 	{
 		type = "item",
-		name = "hydraulic-refinery",
-		icon = "__hydraulic_machines__/graphics/hydraulic-assembling-machine/hydraulic-assembling-machine-icon.png",
+		name = "hydraulic-petrochemical-plant",
+		icon = "__hydraulic_machines__/graphics/hydraulic-petrochemical-plant/hydraulic-petrochemical-plant-icon.png",
 		subgroup = "production-machine",
 		color_hint = { text = "2" },
 		order = "b[hydraulic-assembling-machine]",
@@ -61,16 +24,16 @@ data:extend({
 		drop_sound = item_sounds.mechanical_inventory_move,
 		--default_import_location = "hydraulic_machines",
 		weight = 50 * kg,
-		place_result = "hydraulic-refinery",
+		place_result = "hydraulic-petrochemical-plant",
 		stack_size = 50,
 	},
 	{
 		type = "assembling-machine",
-		name = "hydraulic-refinery",
-		icon = "__base__/graphics/icons/oil-refinery.png",
+		name = "hydraulic-petrochemical-plant",
+		icon = "__hydraulic_machines__/graphics/hydraulic-petrochemical-plant/hydraulic-petrochemical-plant-icon.png",
 		flags = { "placeable-neutral", "player-creation" },
-		minable = { mining_time = 0.2, result = "hydraulic-refinery" },
-		fast_replaceable_group = "hydraulic-refinery",
+		minable = { mining_time = 0.2, result = "hydraulic-petrochemical-plant" },
+		fast_replaceable_group = "hydraulic-petrochemical-plant",
 		max_health = 350,
 		corpse = "oil-refinery-remnants",
 		dying_explosion = "oil-refinery-explosion",
@@ -107,10 +70,10 @@ data:extend({
 				color = { 0, 0, 0, 0 }, -- to remove default burner glow
 			},
 			fluid_box = {
-				--pipe_picture = hydraulicassemblingmachinepipes(),
+				--pipe_picture = hydraulic_refinery_pipes(),
 				pipe_covers = pipecoverspictures(),
 				always_draw_covers = true,
-				volume = 10,
+				volume = 100,
 				filter = "lubricant",
 				pipe_connections = {
 					{ direction = defines.direction.west, position = { -4, 0 } },
@@ -125,14 +88,14 @@ data:extend({
 			animation = {
 				layers = {
 					{
-						filename = "__hydraulic_machines__/graphics/hydraulic-refinery/hydraulic-refinery.png",
+						filename = "__hydraulic_machines__/graphics/hydraulic-petrochemical-plant/hydraulic-petrochemical-plant.png",
 						priority = "high",
 						width = 660,
 						height = 700,
 						frame_count = 1,
 						line_length = 1,
 						shift = util.by_pixel(0, -10),
-						scale = 0.48,
+						scale = 0.47,
 					},
 					{
 						filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
@@ -260,7 +223,7 @@ data:extend({
 					{
 						flow_direction = "input",
 						direction = defines.direction.south,
-						position = { 2, 4 },
+						position = { 0, 4 },
 					},
 				},
 			},
@@ -272,7 +235,7 @@ data:extend({
 					{
 						flow_direction = "input",
 						direction = defines.direction.south,
-						position = { 0, 4 },
+						position = { 2, 4 },
 					},
 				},
 			},

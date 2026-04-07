@@ -41,9 +41,11 @@ end
 local DEFAULT_CATEGORIES = {
 	"efficiency",
 	"productivity",
-	"quality",
 	"speed",
 }
+if mods["quality"] then
+	table.insert(DEFAULT_CATEGORIES, "quality")
+end
 
 local ENTITY_TYPES = {
 	"assembling-machine",
@@ -79,9 +81,10 @@ for _, type_name in pairs(ENTITY_TYPES) do
 				if cat == "efficiency" then
 					table.remove(categories, i)
 				end
-
-				if cat == "quality" then
-					table.remove(categories, i)
+				if mods["quality"] then
+					if cat == "quality" then
+						table.remove(categories, i)
+					end
 				end
 
 				if cat == "industrial" then
