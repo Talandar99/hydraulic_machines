@@ -31,37 +31,37 @@ data.extend({
 --petochemical-processing
 data:extend({
 	{
-		type = "recipe",
 		name = "hydraulic-oil-processing",
+		icon = "__hydraulic_machines__/graphics/hydrauilic-oil-processing.png",
+		type = "recipe",
 		category = "petochemical-processing",
 		enabled = false,
 		energy_required = 10,
 		ingredients = {
 			{ type = "fluid", name = "water", amount = 50 },
 			{ type = "fluid", name = "crude-oil", amount = 100 },
-			{ type = "fluid", name = "methane", amount = 50 },
+			{ type = "fluid", name = "petroleum-gas", amount = 50 }, --change to methane later
 		},
 		results = {
+			{ type = "fluid", name = "residual-oil", amount = 20 },
 			{ type = "fluid", name = "heavy-oil", amount = 20 },
 			{ type = "fluid", name = "light-oil", amount = 30 },
-			{ type = "fluid", name = "petroleum-gas", amount = 40 },
 			{ type = "fluid", name = "naphtha", amount = 25 },
-			{ type = "fluid", name = "residual-oil", amount = 20 },
+			{ type = "fluid", name = "petroleum-gas", amount = 40 },
 		},
 		allow_productivity = true,
-		icon = "__base__/graphics/icons/fluid/advanced-oil-processing.png",
 		subgroup = "fluid-recipes",
 		order = "a[oil-processing]-c[petochemical-processing]",
 	},
 	{
 		type = "recipe",
-		name = "naphtha-reforming",
+		name = "gasoline",
 		category = "petochemical-processing",
 		enabled = false,
 		energy_required = 5,
 		ingredients = {
 			{ type = "fluid", name = "naphtha", amount = 10 },
-			{ type = "fluid", name = "methane", amount = 25 },
+			{ type = "fluid", name = "petroleum-gas", amount = 25 }, --change to methane later
 			{ type = "fluid", name = "water", amount = 30 },
 		},
 		results = {
@@ -77,8 +77,9 @@ data:extend({
 -------------------------------------------------------------------------------
 data.extend({
 	{
-		type = "recipe",
 		name = "residual-oil-cracking",
+		icon = "__hydraulic_machines__/graphics/residual-oil-cracking.png",
+		type = "recipe",
 		category = "chemistry",
 		enabled = false,
 		energy_required = 2,
@@ -91,13 +92,13 @@ data.extend({
 		},
 		allow_productivity = true,
 		main_product = "",
-		icon = "__base__/graphics/icons/fluid/heavy-oil-cracking.png",
 		subgroup = "fluid-recipes",
 		order = "b[fluid-chemistry]-a[heavy-oil-cracking]",
 	},
 	{
 		type = "recipe",
 		name = "light-oil-to-naphtha-cracking",
+		icon = "__hydraulic_machines__/graphics/light-oil-to-naphtha-cracking.png",
 		category = "chemistry",
 		enabled = false,
 		energy_required = 2,
@@ -113,8 +114,12 @@ data.extend({
 		order = "b[fluid-chemistry]-c[light-oil-to-naphtha]",
 	},
 	{
-		type = "recipe",
 		name = "lubricant-from-residual-oil",
+		icons = {
+			{ icon = "__hydraulic_machines__/graphics/residual-oil.png", icon_size = 64 },
+			{ icon = "__base__/graphics/icons/fluid/lubricant.png", icon_size = 64, shift = { 0, 16 } },
+		},
+		type = "recipe",
 		category = "chemistry",
 		enabled = false,
 		energy_required = 1,
@@ -128,4 +133,41 @@ data.extend({
 		subgroup = "fluid-recipes",
 		order = "c[oil-products]-a[lubricant]",
 	},
+	{
+		name = "naphtha-cracking",
+		icon = "__hydraulic_machines__/graphics/naphtha-cracking.png",
+		type = "recipe",
+		category = "chemistry",
+		enabled = false,
+		energy_required = 2,
+		ingredients = {
+			{ type = "fluid", name = "water", amount = 30 },
+			{ type = "fluid", name = "naphtha", amount = 30 },
+		},
+		results = {
+			{ type = "fluid", name = "petroleum-gas", amount = 15 },
+		},
+		allow_productivity = true,
+		main_product = "",
+		subgroup = "fluid-recipes",
+		order = "b[fluid-chemistry]-b[light-oil-cracking]",
+	},
 })
+
+for _, recipe in pairs(data.raw.recipe) do
+	if
+		recipe.name == "residual-oil-cracking"
+		or recipe.name == "light-oil-to-naphtha-cracking"
+		or recipe.name == "lubricant-from-residual-oil"
+		or recipe.name == "heavy-oil-cracking"
+		or recipe.name == "light-oil-cracking"
+		or recipe.name == "naphtha-cracking"
+		or recipe.name == "lubricant"
+	then
+		if not recipe.additional_categories then
+			recipe.additional_categories = {}
+		end
+
+		table.insert(recipe.additional_categories, "petochemical-processing")
+	end
+end
