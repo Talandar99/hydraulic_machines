@@ -80,24 +80,6 @@ data.extend({
 		type = "recipe",
 		name = "residual-oil-cracking",
 		category = "chemistry",
-		additional_categories = { "cryogenics" },
-		enabled = false,
-		energy_required = 3,
-		ingredients = {
-			{ type = "fluid", name = "residual-oil", amount = 40 },
-			{ type = "fluid", name = "water", amount = 30 },
-		},
-		results = {
-			{ type = "fluid", name = "heavy-oil", amount = 30 },
-		},
-		allow_productivity = true,
-		subgroup = "fluid-recipes",
-		order = "b[fluid-chemistry]-a[residual-oil-cracking]",
-	},
-	{
-		type = "recipe",
-		name = "residual-oil-cracking",
-		category = "chemistry",
 		enabled = false,
 		energy_required = 2,
 		ingredients = {
@@ -118,7 +100,7 @@ data.extend({
 		name = "light-oil-to-naphtha-cracking",
 		category = "chemistry",
 		enabled = false,
-		energy_required = 3,
+		energy_required = 2,
 		ingredients = {
 			{ type = "fluid", name = "light-oil", amount = 30 },
 			{ type = "fluid", name = "water", amount = 30 },
