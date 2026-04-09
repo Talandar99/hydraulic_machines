@@ -1,0 +1,32 @@
+data.extend({
+	{
+		type = "fluid",
+		name = "residual-oil",
+		subgroup = "fluid",
+		default_temperature = 25,
+		base_color = { 0.5, 0.13, 0 },
+		flow_color = { 0.85, 0.6, 0.3 },
+		icon = "__base__/graphics/icons/fluid/heavy-oil.png",
+		order = "a[fluid]-b[oil]-d[heavy-oil]",
+	},
+	{
+		type = "fluid",
+		name = "naphtha",
+		subgroup = "fluid",
+		default_temperature = 25,
+		base_color = { 0.57, 0.33, 0 },
+		flow_color = { 1, 0.73, 0.07 },
+		icon = "__base__/graphics/icons/fluid/light-oil.png",
+		order = "a[fluid]-b[oil]-c[light-oil]",
+	},
+	{
+		type = "fluid",
+		name = "gasoline",
+		subgroup = "fluid",
+		default_temperature = 25,
+		base_color = { 0.57, 0.33, 0 },
+		flow_color = { 1, 0.73, 0.07 },
+		icon = "__base__/graphics/icons/fluid/light-oil.png",
+		order = "a[fluid]-b[oil]-c[light-oil]",
+	},
+})

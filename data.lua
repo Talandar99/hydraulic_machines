@@ -1,4 +1,5 @@
 -- machines
+require("prototypes/fluids")
 require("prototypes/industrial-module")
 require("prototypes/hydraulic-assembling-machine")
 require("prototypes/hydraulic-shaper")

@@ -6,7 +6,7 @@ local sounds = require("__base__.prototypes.entity.sounds")
 
 data:extend({
 	{
-		name = "industrial-oil-processing",
+		name = "petochemical-processing",
 		type = "recipe-category",
 	},
 })
@@ -59,7 +59,7 @@ data:extend({
 		drawing_box_vertical_extension = 0,
 		module_slots = 5,
 		allowed_effects = { "consumption", "speed", "productivity", "pollution" },
-		crafting_categories = { "oil-processing", "industrial-oil-processing" },
+		crafting_categories = { "oil-processing", "petochemical-processing" },
 		crafting_speed = 4,
 		energy_source = {
 			type = "fluid",
