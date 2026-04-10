@@ -153,6 +153,84 @@ data.extend({
 		order = "b[fluid-chemistry]-b[light-oil-cracking]",
 	},
 })
+-- solid fuel recipes
+data.extend({
+	{
+		type = "recipe",
+		name = "solid-fuel-from-gasoline",
+		icons = {
+			{ icon = "__base__/graphics/icons/solid-fuel.png", icon_size = 64 },
+			{
+				icon = "__hydraulic_machines__/graphics/gasoline.png",
+				icon_size = 64,
+				scale = 0.3,
+				shift = { -8, -8 },
+			},
+		},
+		category = "chemistry",
+		energy_required = 1,
+		ingredients = {
+			{ type = "fluid", name = "gasoline", amount = 6 },
+		},
+		results = {
+			{ type = "item", name = "solid-fuel", amount = 1 },
+		},
+		allow_productivity = true,
+		subgroup = "fluid-recipes",
+		enabled = false,
+		order = "b[fluid-chemistry]-e[solid-fuel-from-naphtha]",
+	},
+	{
+		type = "recipe",
+		name = "solid-fuel-from-naphtha",
+		icons = {
+			{ icon = "__base__/graphics/icons/solid-fuel.png", icon_size = 64 },
+			{
+				icon = "__hydraulic_machines__/graphics/naphtha.png",
+				icon_size = 64,
+				scale = 0.3,
+				shift = { -8, -8 },
+			},
+		},
+		category = "chemistry",
+		energy_required = 1,
+		ingredients = {
+			{ type = "fluid", name = "naphtha", amount = 15 },
+		},
+		results = {
+			{ type = "item", name = "solid-fuel", amount = 1 },
+		},
+		allow_productivity = true,
+		subgroup = "fluid-recipes",
+		enabled = false,
+		order = "b[fluid-chemistry]-e[solid-fuel-from-naphtha]",
+	},
+	{
+		type = "recipe",
+		name = "solid-fuel-from-residual-oil",
+		icons = {
+			{ icon = "__base__/graphics/icons/solid-fuel.png", icon_size = 64 },
+			{
+				icon = "__hydraulic_machines__/graphics/residual-oil.png",
+				icon_size = 64,
+				scale = 0.3,
+				shift = { -8, -8 },
+			},
+		},
+		category = "chemistry",
+		energy_required = 1,
+		ingredients = {
+			{ type = "fluid", name = "residual-oil", amount = 30 },
+		},
+		results = {
+			{ type = "item", name = "solid-fuel", amount = 1 },
+		},
+		allow_productivity = true,
+		subgroup = "fluid-recipes",
+		enabled = false,
+		order = "b[fluid-chemistry]-e[solid-fuel-from-residual-oil]",
+	},
+})
 
 for _, recipe in pairs(data.raw.recipe) do
 	if
