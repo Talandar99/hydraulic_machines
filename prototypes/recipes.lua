@@ -111,7 +111,7 @@ data.extend({
 		},
 		allow_productivity = true,
 		subgroup = "fluid-recipes",
-		order = "b[fluid-chemistry]-c[light-oil-to-naphtha]",
+		order = "b[fluid-chemistry]-b[light-oil-cracking]",
 	},
 	{
 		name = "lubricant-from-residual-oil",
@@ -178,7 +178,7 @@ data.extend({
 		allow_productivity = true,
 		subgroup = "fluid-recipes",
 		enabled = false,
-		order = "b[fluid-chemistry]-e[solid-fuel-from-naphtha]",
+		order = "b[fluid-chemistry]-cd[solid-fuel-from-naphtha]",
 	},
 	{
 		type = "recipe",
@@ -203,7 +203,7 @@ data.extend({
 		allow_productivity = true,
 		subgroup = "fluid-recipes",
 		enabled = false,
-		order = "b[fluid-chemistry]-e[solid-fuel-from-naphtha]",
+		order = "b[fluid-chemistry]-cd[solid-fuel-from-naphtha]",
 	},
 	{
 		type = "recipe",
