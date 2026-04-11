@@ -1,3 +1,4 @@
+require("prototypes/items")
 -- machines
 require("prototypes/fluids")
 require("prototypes/industrial-module")

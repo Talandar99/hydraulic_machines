@@ -172,16 +172,3 @@ data:extend({
 		fluid_boxes_off_when_no_fluid_recipe = true,
 	},
 })
-
-data:extend({
-	{
-		type = "recipe",
-		name = "hydraulic-shaper",
-		enabled = false,
-		ingredients = {
-			{ type = "item", name = "iron-plate", amount = 10 },
-			{ type = "item", name = "iron-gear-wheel", amount = 5 },
-		},
-		results = { { type = "item", name = "burner-barreling-machine", amount = 1 } },
-	},
-})

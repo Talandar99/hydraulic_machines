@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2026-04-06
+  Changes:
+    - Added Rubber
+    - Hydraulic machines now require rubber to make
+    - Added new fluids: naphtha, residual oil and gasoline
+    - Added hydraulic petrochemical plant. Powerfull 9x9 building capable of oil processing
+    - Added new oil processing recipes
+---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 2026-04-06
   Changes:

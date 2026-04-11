@@ -4,7 +4,7 @@
     "title": "Hydraulic Machines",
     "author": "Talandar",
     "dependencies": [
-        "diesel_engine",
+        "diesel_engine >= 0.7.0",
         "lubrication_tower",
         "(?) quality",
         "? diesel_machines",

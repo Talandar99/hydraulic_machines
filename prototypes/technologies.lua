@@ -1,6 +1,34 @@
 data:extend({
 	{
 		type = "technology",
+		name = "rubber",
+		icon = "__hydraulic_machines__/graphics/rubber/rubber-technology.png",
+		icon_size = 512,
+		effects = {
+			{ type = "unlock-recipe", recipe = "basic-residual-oil-processing" },
+			{ type = "unlock-recipe", recipe = "residual-oil-cracking" },
+			{ type = "unlock-recipe", recipe = "lubricant-from-residual-oil" },
+			{ type = "unlock-recipe", recipe = "solid-fuel-from-residual-oil" },
+			{ type = "unlock-recipe", recipe = "rubber" },
+		},
+		prerequisites = {
+			"advanced-oil-processing",
+			"production-science-pack",
+		},
+		unit = {
+			count = 200,
+			ingredients = {
+				{ "automation-science-pack", 1 },
+				{ "logistic-science-pack", 1 },
+				{ "chemical-science-pack", 1 },
+				{ "production-science-pack", 1 },
+			},
+			time = 30,
+		},
+		order = "d-a",
+	},
+	{
+		type = "technology",
 		name = "hydraulic-automation",
 		icon = "__hydraulic_machines__/graphics/hydraulic-automation.png",
 		icon_size = 256,
@@ -10,14 +38,15 @@ data:extend({
 		},
 		prerequisites = {
 			"automation-2",
-			"electric-mining-drill",
+			"engine",
 			"production-science-pack",
 			"chemical-science-pack",
 			"lubricant",
 			"oil-processing",
+			"rubber",
 		},
 		unit = {
-			count_formula = "500",
+			count = 500,
 			ingredients = {
 				{ "automation-science-pack", 1 },
 				{ "logistic-science-pack", 1 },
@@ -26,6 +55,37 @@ data:extend({
 			},
 			time = 30,
 		},
+	},
+	{
+		type = "technology",
+		name = "hydraulic-petrochemistry",
+		icon = "__hydraulic_machines__/graphics/hydraulic-petrochemical-plant/hydraulic-petrochemical-plant-technology.png",
+		icon_size = 700,
+		effects = {
+			{ type = "unlock-recipe", recipe = "hydraulic-petrochemical-plant" },
+			{ type = "unlock-recipe", recipe = "hydraulic-oil-processing" },
+			{ type = "unlock-recipe", recipe = "light-oil-to-naphtha-cracking" },
+			{ type = "unlock-recipe", recipe = "naphtha-cracking" },
+			{ type = "unlock-recipe", recipe = "gasoline" },
+			{ type = "unlock-recipe", recipe = "solid-fuel-from-naphtha" },
+			{ type = "unlock-recipe", recipe = "solid-fuel-from-gasoline" },
+		},
+		prerequisites = {
+			"hydraulic-automation",
+			"rubber",
+			"advanced-oil-processing",
+		},
+		unit = {
+			count = 2000,
+			ingredients = {
+				{ "automation-science-pack", 1 },
+				{ "logistic-science-pack", 1 },
+				{ "chemical-science-pack", 1 },
+				{ "production-science-pack", 1 },
+			},
+			time = 60,
+		},
+		order = "d-b",
 	},
 })
 

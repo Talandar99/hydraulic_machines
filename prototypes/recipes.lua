@@ -2,34 +2,90 @@
 data.extend({
 	{
 		type = "recipe",
-		name = "hydraulic-assembling-machine",
+		name = "hydraulic-shaper",
+		category = "hydraulic-assembling",
 		enabled = false,
+		energy_required = 5,
+		ingredients = {
+			{ type = "item", name = "steel-plate", amount = 10 },
+			{ type = "item", name = "pipe", amount = 5 },
+			{ type = "item", name = "iron-gear-wheel", amount = 5 },
+			{ type = "item", name = "engine-unit", amount = 1 },
+			{ type = "item", name = "refined-concrete", amount = 5 },
+			{ type = "item", name = "rubber", amount = 3 },
+		},
+		results = { { type = "item", name = "hydraulic-shaper", amount = 1 } },
+	},
+	{
+		type = "recipe",
+		name = "hydraulic-assembling-machine",
+		category = "advanced-crafting",
+		enabled = false,
+		energy_required = 10,
 		ingredients = {
 			{ type = "item", name = "steel-plate", amount = 15 },
 			{ type = "item", name = "pipe", amount = 15 },
 			{ type = "item", name = "iron-gear-wheel", amount = 7 },
-			{ type = "item", name = "engine-unit", amount = 1 },
+			{ type = "item", name = "engine-unit", amount = 3 },
 			{ type = "item", name = "refined-concrete", amount = 20 },
+			{ type = "item", name = "rubber", amount = 10 },
 		},
 		results = { { type = "item", name = "hydraulic-assembling-machine", amount = 1 } },
 	},
 	{
 		type = "recipe",
-		name = "hydraulic-shaper",
+		name = "hydraulic-petrochemical-plant",
 		category = "hydraulic-assembling",
 		enabled = false,
+		energy_required = 20,
 		ingredients = {
-			{ type = "item", name = "steel-plate", amount = 10 },
-			{ type = "item", name = "pipe", amount = 5 },
-			{ type = "item", name = "iron-gear-wheel", amount = 5 },
-			{ type = "item", name = "engine-unit", amount = 3 },
-			{ type = "item", name = "refined-concrete", amount = 5 },
+			{ type = "item", name = "steel-plate", amount = 80 },
+			{ type = "item", name = "pipe", amount = 130 },
+			{ type = "item", name = "iron-gear-wheel", amount = 30 },
+			{ type = "item", name = "engine-unit", amount = 20 },
+			{ type = "item", name = "refined-concrete", amount = 200 },
+			{ type = "item", name = "rubber", amount = 40 },
 		},
-		results = { { type = "item", name = "hydraulic-shaper", amount = 1 } },
+		results = { { type = "item", name = "hydraulic-petrochemical-plant", amount = 1 } },
+	},
+	{
+		type = "recipe",
+		name = "rubber",
+		category = "chemistry",
+		enabled = false,
+		energy_required = 5,
+		ingredients = {
+			{ type = "fluid", name = "residual-oil", amount = 20 },
+			{ type = "fluid", name = "petroleum-gas", amount = 10 },
+		},
+		results = {
+			{ type = "item", name = "rubber", amount = 3 },
+		},
+		allow_productivity = true,
+		subgroup = "intermediate-product",
+		order = "b[chemistry]-a[rubber]",
 	},
 })
 --petochemical-processing
 data:extend({
+	{
+		type = "recipe",
+		name = "basic-residual-oil-processing",
+		icon = "__hydraulic_machines__/graphics/basic-residual-oil-processing.png",
+		category = "oil-processing",
+		enabled = false,
+		energy_required = 3,
+		ingredients = {
+			{ type = "fluid", name = "crude-oil", amount = 50 },
+		},
+		results = {
+			{ type = "fluid", name = "residual-oil", amount = 20 },
+			{ type = "fluid", name = "heavy-oil", amount = 10 },
+		},
+		allow_productivity = true,
+		subgroup = "fluid-recipes",
+		order = "a[oil-processing]-a[basic-residual]",
+	},
 	{
 		name = "hydraulic-oil-processing",
 		icon = "__hydraulic_machines__/graphics/hydrauilic-oil-processing.png",
@@ -43,7 +99,7 @@ data:extend({
 			{ type = "fluid", name = "petroleum-gas", amount = 50 }, --change to methane later
 		},
 		results = {
-			{ type = "fluid", name = "residual-oil", amount = 20 },
+			{ type = "fluid", name = "residual-oil", amount = 25 },
 			{ type = "fluid", name = "heavy-oil", amount = 20 },
 			{ type = "fluid", name = "light-oil", amount = 30 },
 			{ type = "fluid", name = "naphtha", amount = 25 },
@@ -53,6 +109,7 @@ data:extend({
 		subgroup = "fluid-recipes",
 		order = "a[oil-processing]-c[petochemical-processing]",
 	},
+
 	{
 		type = "recipe",
 		name = "gasoline",
@@ -60,16 +117,16 @@ data:extend({
 		enabled = false,
 		energy_required = 5,
 		ingredients = {
+			{ type = "fluid", name = "water", amount = 30 },
 			{ type = "fluid", name = "naphtha", amount = 10 },
 			{ type = "fluid", name = "petroleum-gas", amount = 25 }, --change to methane later
-			{ type = "fluid", name = "water", amount = 30 },
 		},
 		results = {
 			{ type = "fluid", name = "gasoline", amount = 10 },
 		},
 		allow_productivity = true,
 		subgroup = "fluid-recipes",
-		order = "b[fluid-chemistry]-d[gasoline]",
+		order = "c[fluid-chemistry]-bd[gasoline]",
 	},
 })
 -------------------------------------------------------------------------------
@@ -241,6 +298,9 @@ for _, recipe in pairs(data.raw.recipe) do
 		or recipe.name == "light-oil-cracking"
 		or recipe.name == "naphtha-cracking"
 		or recipe.name == "lubricant"
+		or recipe.name == "rubber"
+		or recipe.name == "solid-fuel-from-petroleum-gas"
+		or recipe.name == "solid-fuel-from-gasoline"
 	then
 		if not recipe.additional_categories then
 			recipe.additional_categories = {}
