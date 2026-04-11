@@ -23,7 +23,7 @@ data:extend({
 		pick_sound = item_sounds.mechanical_inventory_pickup,
 		drop_sound = item_sounds.mechanical_inventory_move,
 		--default_import_location = "hydraulic_machines",
-		weight = 50 * kg,
+		weight = 500 * kg,
 		place_result = "hydraulic-petrochemical-plant",
 		stack_size = 50,
 	},

@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 2026-04-11
+  Bugfixes:
+    - Hydraulic petrochemical can now accept industrial modules
+  Changes:
+    - Hydraulic shaper now output direclty on belt (like recycler)
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
-Date: 2026-04-06
+Date: 2026-04-11
   Changes:
     - Added Rubber
     - Hydraulic machines now require rubber to make

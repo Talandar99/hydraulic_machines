@@ -5,6 +5,7 @@ local INDUSTRIAL_ONLY_LIST = {
 	-- hydraulic machines
 	["hydraulic-assembling-machine"] = true,
 	["hydraulic-shaper"] = true,
+	["hydraulic-petrochemical-plant"] = true,
 	-- diesel machines
 	["diesel-assembling-machine"] = true,
 	["diesel-mining-drill"] = true,

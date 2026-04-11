@@ -128,7 +128,7 @@ data:extend({
 		open_sound = sounds.metallic_chest_open,
 		close_sound = sounds.metallic_chest_close,
 		animation_sound = sounds.logistics_chest_open,
-		--vector_to_place_result = { -0.0, -1.0 },
+		vector_to_place_result = { -0.0, -0.9 },
 		match_animation_speed_to_activity = true,
 		opened_duration = 7, --logistic_chest_opened_duration ==7
 		working_sound = {
